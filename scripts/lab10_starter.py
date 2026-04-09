@@ -90,7 +90,7 @@ class RrtPlanner:
         self.map_aabb = map_aabb
         self.graph_publisher = rospy.Publisher("/rrt_graph", MarkerArray, queue_size=10)
         self.plan_visualization_pub = rospy.Publisher("/waypoints", MarkerArray, queue_size=10)
-        self.delta = 0.1
+        self.delta = 0.3
         self.obstacle_padding = 0.15
         self.goal_threshold = GOAL_THRESHOLD
 
