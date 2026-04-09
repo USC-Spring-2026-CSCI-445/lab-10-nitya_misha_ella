@@ -265,7 +265,7 @@ class ObstacleFreeWaypointController:
 
         self.angular_controller = PIDController(kP, kI, kD, kS, u_min, u_max)
        
-        self.v0 = 0.15 #base forward velocity
+        self.v0 = 0.1 #base forward velocity
         ######### Your code ends here #########
 
     def odom_callback(self, msg):
