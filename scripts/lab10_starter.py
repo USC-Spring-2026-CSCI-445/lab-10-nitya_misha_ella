@@ -212,7 +212,7 @@ class RrtPlanner:
 
 
         ## Change this value for different tests !!
-        num_iterations = 700
+        num_iterations = 3000
 
 
         ## as generate the graph from start to end, set parents (aka previous) for the nodes for backtracking
