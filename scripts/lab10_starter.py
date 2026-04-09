@@ -251,7 +251,6 @@ class ObstacleFreeWaypointController:
         self.robot_ctrl_pub = rospy.Publisher("/cmd_vel", Twist, queue_size=10)
         self.waypoint_pub = rospy.Publisher("/waypoints", MarkerArray, queue_size=10)
         sleep(0.5)  # sleep to give time for rviz to subscribe to /waypoints
-        publish_waypoints(self.waypoints, self.waypoint_pub)
 
         self.current_position = None
 
