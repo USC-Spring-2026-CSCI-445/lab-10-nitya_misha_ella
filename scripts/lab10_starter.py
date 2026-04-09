@@ -385,7 +385,6 @@ if __name__ == "__main__":
     controller = ObstacleFreeWaypointController(plan)
 
     try:
-        while not rospy.is_shutdown():
-            controller.control_robot()
+        controller.control_robot()
     except rospy.ROSInterruptException:
         print("Shutting down...")
