@@ -265,7 +265,7 @@ class ObstacleFreeWaypointController:
 
         self.angular_controller = PIDController(kP, kI, kD, kS, u_min, u_max)
        
-        self.v0 = 0.2 #base forward velocity
+        self.v0 = 0.15 #base forward velocity
         ######### Your code ends here #########
 
     def odom_callback(self, msg):
@@ -348,7 +348,7 @@ class ObstacleFreeWaypointController:
             t = rospy.get_time()
             omega = self.angular_controller.control(angle_error, t) #calls the control method in the PID controller class that internally computes ω = kP*error + kI*integral + kD*derivative
             ctrl_msg.angular.z = omega
-            ctrl_msg.linear.x = self.v0
+            ctrl_msg.linear.x = self.v0 * max(0, 1 - abs(angle_error) / pi)               
             
             #publish
             self.robot_ctrl_pub.publish(ctrl_msg)
